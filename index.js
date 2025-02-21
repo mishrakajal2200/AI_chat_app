@@ -34,7 +34,7 @@ app.use('/api',userRoutes);
 // **Socket.io for real chat and video call signaling**
 const io = new Server(httpServer, {
     cors: {
-        origin: "https://lively-kitten-c14f57.netlify.app",
+        origin: "http://localhost:3000",
         methods: ["GET", "POST"],
     }
 });
