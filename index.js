@@ -34,7 +34,7 @@ app.use('/api',userRoutes);
 // **Socket.io for real chat and video call signaling**
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://poetic-cuchufli-c8644d.netlify.app",
         methods: ["GET", "POST"],
     }
 });
