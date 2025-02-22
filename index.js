@@ -15,7 +15,12 @@ const app = express();
 const httpServer = http.createServer(app);
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ["https://poetic-cuchufli-c8644d.netlify.app", "https://elegant-sable-c4c941.netlify.app"],
+    methods: ["GET", "POST"],
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -34,10 +39,12 @@ app.use('/api',userRoutes);
 // **Socket.io for real chat and video call signaling**
 const io = new Server(httpServer, {
     cors: {
-        origin: "https://poetic-cuchufli-c8644d.netlify.app",
+        origin:  ["https://poetic-cuchufli-c8644d.netlify.app", "https://elegant-sable-c4c941.netlify.app"],
         methods: ["GET", "POST"],
     }
 });
+
+
 
 const users = {}; // Store connected users and their socket IDs
 
