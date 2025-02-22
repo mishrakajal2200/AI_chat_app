@@ -16,7 +16,7 @@ const httpServer = http.createServer(app);
 
 // Middleware
 app.use(cors({
-    origin: ["https://iridescent-crepe-c3abb0.netlify.app", "http://localhost:3000"],
+    origin: ["https://bright-lily-3ca9e8.netlify.app", "http://localhost:3000"],
     credentials: true
 }));
 
@@ -38,7 +38,7 @@ app.use('/api',userRoutes);
 // **Socket.io for real chat and video call signaling**
 const io = new Server(httpServer, {
     cors: {
-        origin: ["https://iridescent-crepe-c3abb0.netlify.app", "http://localhost:3000"],
+        origin: ["https://bright-lily-3ca9e8.netlify.app", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 });
