@@ -16,8 +16,7 @@ const httpServer = http.createServer(app);
 
 // Middleware
 app.use(cors({
-    origin: ["https://poetic-cuchufli-c8644d.netlify.app", "https://elegant-sable-c4c941.netlify.app"],
-    methods: ["GET", "POST"],
+    origin: ["https://iridescent-crepe-c3abb0.netlify.app", "http://localhost:3000"],
     credentials: true
 }));
 
@@ -39,10 +38,11 @@ app.use('/api',userRoutes);
 // **Socket.io for real chat and video call signaling**
 const io = new Server(httpServer, {
     cors: {
-        origin:  ["https://poetic-cuchufli-c8644d.netlify.app", "https://elegant-sable-c4c941.netlify.app"],
-        methods: ["GET", "POST"],
+        origin: ["https://iridescent-crepe-c3abb0.netlify.app", "http://localhost:3000"],
+        methods: ["GET", "POST"]
     }
 });
+
 
 
 
